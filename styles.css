@@ -32,6 +32,7 @@ a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 760; letter-spacing: 0; }
 .brand img { width: 30px; height: 30px; border-radius: 7px; }
+.wordmark { font-size: 18px; font-weight: 800; letter-spacing: 0; }
 nav { display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
 nav a:hover, footer a:hover, .text-link:hover { color: var(--green); }
 .hero {
@@ -105,6 +106,24 @@ footer p { margin: 0; }
 .simple-page p, .simple-page li { color: var(--muted); font-size: 16px; }
 .simple-page li { margin-bottom: 10px; }
 .simple-page .lede { color: var(--ink); }
+.hub-hero { min-height: 510px; padding: 116px 0 80px; border-bottom: 1px solid var(--line); }
+.hub-hero h1 { margin: 0 0 24px; font-size: clamp(58px, 8.5vw, 116px); line-height: 0.9; }
+.hub-hero > p:last-child { margin-bottom: 0; color: var(--muted); font-size: clamp(18px, 2vw, 24px); }
+.work { padding: 44px 0 112px; }
+.work-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+.work-heading .eyebrow { margin: 0; }
+.work-heading > p:last-child { margin: 0; color: var(--muted); font-size: 14px; }
+.work-grid { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 16px; }
+.project { position: relative; min-height: 390px; display: flex; flex-direction: column; overflow: hidden; padding: 24px; border: 1px solid var(--line); border-radius: 8px; transition: transform 160ms ease, border-color 160ms ease; }
+.project:hover { transform: translateY(-3px); border-color: var(--green); }
+.project-topline { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.project-palmguard { background: #e7f5ed; }
+.project-palmguard img { width: 134px; height: 134px; margin: auto; border-radius: 28px; box-shadow: 0 13px 24px rgba(0, 88, 65, 0.2); }
+.project-copy h2 { margin: 0 0 5px; font-size: 30px; line-height: 1; }
+.project-copy p { margin: 0; color: var(--muted); }
+.project-arrow { position: absolute; right: 24px; bottom: 24px; color: var(--green); font-size: 26px; }
+.project-soon { background: #fff; }
+.coming-mark { margin: auto; color: var(--coral); font-size: 80px; font-weight: 250; line-height: 1; }
 
 @media (max-width: 820px) {
   .site-header, main, footer { width: min(100% - 32px, 640px); }
@@ -121,6 +140,9 @@ footer p { margin: 0; }
   .principles h2 { margin-top: 24px; }
   .how-it-works { grid-template-columns: 1fr; gap: 46px; padding: 76px 0; }
   .privacy-callout { margin-bottom: 76px; padding: 32px 24px; }
+  .hub-hero { min-height: 420px; padding: 84px 0 64px; }
+  .work-grid { grid-template-columns: 1fr; }
+  .project { min-height: 320px; }
   footer { flex-wrap: wrap; }
 }
 

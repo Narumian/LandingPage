@@ -1,6 +1,6 @@
-# PalmGuard Landing Page
+# Narumian Landing Page
 
-Static marketing and support site for PalmGuard. It is published with GitHub Pages.
+Static hub for Narumian projects. PalmGuard lives at `/palmguard/`. The site is published with GitHub Pages.
 
 ## Local Preview
 

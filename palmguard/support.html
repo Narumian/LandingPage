@@ -17,8 +17,25 @@
   <main class="simple-page">
     <p class="eyebrow">Support</p>
     <h1>Help shape PalmGuard.</h1>
-    <p class="lede">Questions about PalmGuard, setup, or availability? Send a support request and include your macOS version and Mac model.</p>
-    <p><a class="button primary" href="https://github.com/Narumian/LandingPage/issues/new/choose">Open a support request</a></p>
+    <p class="lede">Questions about PalmGuard, setup, or availability? Send a note directly from this page.</p>
+    <p>日本語でも送信できます。macOSのバージョンやMacの機種が分かると、問題を調べやすくなります。</p>
+    <form class="feedback-form" id="feedback-form">
+      <label for="feedback-category">What is this about?</label>
+      <select id="feedback-category" name="category" required>
+        <option value="bug">A problem or bug</option>
+        <option value="idea">An idea or suggestion</option>
+        <option value="other">Something else</option>
+      </select>
+      <label for="feedback-message">Message</label>
+      <textarea id="feedback-message" name="message" rows="7" minlength="10" maxlength="1500" required aria-describedby="feedback-note"></textarea>
+      <p class="form-note" id="feedback-note">Please do not include passwords, license keys, private text, or other sensitive information. Messages are stored for support and product improvement, then deleted within 90 days. This form does not collect your email, so individual replies are not available.</p>
+      <div class="feedback-trap" aria-hidden="true">
+        <label for="feedback-website">Leave this field empty</label>
+        <input id="feedback-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="button primary" type="submit">Send feedback</button>
+      <p class="form-status" id="feedback-status" role="status" aria-live="polite"></p>
+    </form>
     <h2>Before reporting an issue</h2>
     <ul>
       <li>Confirm that PalmGuard has Accessibility permission in System Settings when using click filtering.</li>
@@ -27,5 +44,31 @@
     </ul>
   </main>
   <footer><a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a><div><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div><p>© 2026 PalmGuard</p></footer>
+  <script>
+    const form = document.querySelector("#feedback-form");
+    const status = document.querySelector("#feedback-status");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      const button = form.querySelector("button[type=submit]");
+      button.disabled = true;
+      status.textContent = "Sending…";
+      const values = new FormData(form);
+      try {
+        const response = await fetch("https://palmguard-license-service.narumian.workers.dev/v1/feedback", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ category: values.get("category"), message: values.get("message"), website: values.get("website") })
+        });
+        if (!response.ok) throw new Error("Request failed");
+        form.reset();
+        status.textContent = "Thank you. Your feedback was received.";
+      } catch {
+        status.textContent = "We could not send this message. Please try again later.";
+      } finally {
+        button.disabled = false;
+      }
+    });
+  </script>
 </body>
 </html>

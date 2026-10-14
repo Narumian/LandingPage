@@ -112,6 +112,16 @@ footer p { margin: 0; }
 .simple-page p, .simple-page li { color: var(--muted); font-size: 16px; }
 .simple-page li { margin-bottom: 10px; }
 .simple-page .lede { color: var(--ink); }
+.feedback-form { display: grid; gap: 10px; margin: 32px 0 54px; }
+.feedback-form label { margin-top: 8px; color: var(--ink); font-size: 14px; font-weight: 700; }
+.feedback-form select, .feedback-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 12px; color: var(--ink); background: var(--panel); font: inherit; }
+.feedback-form textarea { min-height: 160px; resize: vertical; }
+.feedback-form select:focus-visible, .feedback-form textarea:focus-visible, .feedback-form button:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+.feedback-form .button { justify-self: start; border: 0; cursor: pointer; font: inherit; }
+.feedback-form .button:disabled { opacity: 0.65; cursor: wait; }
+.form-note, .form-status { margin: 0 0 12px; color: var(--muted); font-size: 13px !important; }
+.form-status { min-height: 1.5em; color: var(--green-dark); }
+.feedback-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .hub-hero { min-height: 510px; padding: 116px 0 80px; border-bottom: 1px solid var(--line); }
 .hub-hero h1 { margin: 0 0 24px; font-size: clamp(58px, 8.5vw, 116px); line-height: 0.9; }
 .hub-hero > p:last-child { margin-bottom: 0; color: var(--muted); font-size: clamp(18px, 2vw, 24px); }

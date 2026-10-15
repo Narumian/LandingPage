@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a>
-    <nav aria-label="Primary navigation"><a href="index.html#how-it-works">How it works</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+    <nav aria-label="Primary navigation"><a href="index.html#how-it-works">How it works</a><a href="index.html#pricing">Pricing</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
   </header>
   <main class="simple-page">
     <p class="eyebrow">Privacy summary</p>
@@ -25,11 +25,12 @@
     </ul>
     <h2>Local settings</h2>
     <p>PalmGuard stores its enabled state, chosen suppression delay, and login-item preference locally on the Mac. Diagnostic counters exist only while the app is running.</p>
-    <h2>Optional license verification</h2>
-    <p>When direct sales are enabled, a customer who enters a license key can choose to activate or validate it with the payment provider. The license key and activation identifier are stored in the macOS Keychain. PalmGuard does not send input contents or usage analytics for license verification.</p>
+    <h2>Payments and license verification</h2>
+    <p>Stripe Managed Payments processes checkout and payment details. PalmGuard does not receive or store full payment card details. The license service stores a one-way hash of each license key, an encrypted copy only until the key is claimed, the Stripe payment and session references, and license activation records. It does not store the buyer's email address with the license record.</p>
+    <p>When you activate PalmGuard, the app sends your license key, an activation identifier when validating or deactivating, and a generic device label to the PalmGuard license service on Cloudflare. The license key and activation identifier are stored in the macOS Keychain. The app does not send typed text, input history, or usage analytics.</p>
     <h2>Support messages</h2>
-    <p>If you use the support form, PalmGuard stores the category and message you submit in Cloudflare D1 for support and product improvement. The form does not ask for your name or email address; do not include passwords, license keys, private text, or other sensitive information. Cloudflare uses your IP address to enforce a short-term submission limit, but PalmGuard does not save it with the message. Feedback is automatically deleted after 90 days. Since the form does not collect contact details, individual replies are not available.</p>
+    <p>If you use the support form, PalmGuard stores the category and message you submit in Cloudflare D1 for product feedback. The form does not ask for your name or email address; do not include passwords, license keys, private text, or other sensitive information. Cloudflare uses your IP address to enforce a short-term submission limit, but PalmGuard does not save it with the message. Feedback is automatically deleted after 90 days. For purchase or refund requests, email <a href="mailto:cyc.sys.sys.sys@gmail.com">cyc.sys.sys.sys@gmail.com</a>; information you include in that email is used to respond to your request.</p>
   </main>
-  <footer><a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a><div><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div><p>© 2026 PalmGuard</p></footer>
+  <footer><a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a><div><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="legal.html">Seller information</a><a href="support.html">Support</a></div><p>© 2026 PalmGuard</p></footer>
 </body>
 </html>

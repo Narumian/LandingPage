@@ -19,6 +19,11 @@
     <h1>Help shape PalmGuard.</h1>
     <p class="lede">Questions about PalmGuard, setup, or availability? Send a note directly from this page.</p>
     <p>日本語でも送信できます。macOSのバージョンやMacの機種が分かると、問題を調べやすくなります。</p>
+    <section aria-labelledby="purchase-support-title">
+      <h2 id="purchase-support-title">Purchase and license support</h2>
+      <p>For purchase, activation, or refund requests, email <a href="mailto:cyc.sys.sys.sys@gmail.com">cyc.sys.sys.sys@gmail.com</a>. Please include your order confirmation email; never send your full license key or payment details.</p>
+      <p>購入・ライセンス認証・返金のご相談は <a href="mailto:cyc.sys.sys.sys@gmail.com">cyc.sys.sys.sys@gmail.com</a> までご連絡ください。注文確認メールを添えてください。ライセンスキー全文やカード情報は送らないでください。</p>
+    </section>
     <form class="feedback-form" id="feedback-form">
       <label for="feedback-category">What is this about?</label>
       <select id="feedback-category" name="category" required>
@@ -28,7 +33,7 @@
       </select>
       <label for="feedback-message">Message</label>
       <textarea id="feedback-message" name="message" rows="7" minlength="10" maxlength="1500" required aria-describedby="feedback-note"></textarea>
-      <p class="form-note" id="feedback-note">Please do not include passwords, license keys, private text, or other sensitive information. Messages are stored for support and product improvement, then deleted within 90 days. This form does not collect your email, so individual replies are not available.</p>
+      <p class="form-note" id="feedback-note">Please do not include passwords, license keys, private text, or other sensitive information. Messages are stored for product feedback and deleted within 90 days. This form is anonymous and is not monitored for purchase or refund requests.</p>
       <div class="feedback-trap" aria-hidden="true">
         <label for="feedback-website">Leave this field empty</label>
         <input id="feedback-website" name="website" tabindex="-1" autocomplete="off">
@@ -44,7 +49,7 @@
       <li>Do not include private text, screenshots of sensitive content, or license keys.</li>
     </ul>
   </main>
-  <footer><a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a><div><a href="privacy.html">Privacy</a><a href="support.html">Support</a></div><p>© 2026 PalmGuard</p></footer>
+  <footer><a class="brand" href="index.html"><img src="../assets/palmguard-icon.png" alt=""><span>PalmGuard</span></a><div><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="privacy.html">Privacy</a><a href="legal.html">Seller information</a><a href="support.html">Support</a></div><p>© 2026 PalmGuard</p></footer>
   <script>
     const form = document.querySelector("#feedback-form");
     const status = document.querySelector("#feedback-status");

@@ -49,6 +49,9 @@ h1 { margin-bottom: 12px; font-size: clamp(60px, 7.3vw, 96px); line-height: 0.94
 .body-copy { max-width: 520px; color: var(--muted); font-size: 17px; }
 .hero-actions { display: flex; gap: 22px; align-items: center; margin: 30px 0 24px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border-radius: 7px; font-weight: 720; }
+.button:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px; }
+.button:disabled { cursor: wait; opacity: 0.7; transform: none; }
+.pricing-action .form-status { max-width: 280px; margin: 0; color: var(--muted); font-size: 13px; }
 .button.primary { color: #fff; background: var(--green); box-shadow: 0 5px 0 var(--green-dark); }
 .button.primary:hover { background: var(--green-dark); transform: translateY(1px); box-shadow: 0 4px 0 #003d2d; }
 .text-link { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
@@ -104,7 +107,7 @@ ol p { margin-bottom: 0; color: var(--muted); }
 .availability i { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
 footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 footer .brand { color: var(--ink); }
-footer > div { display: flex; gap: 20px; }
+footer > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 20px; }
 footer p { margin: 0; }
 .simple-page { max-width: 760px; padding: 88px 0 110px; }
 .simple-page h1 { font-size: clamp(48px, 7vw, 76px); }

@@ -178,12 +178,18 @@
           headers: { "content-type": "application/json" },
           body: "{}"
         });
+        if (!response.ok) {
+          throw new Error("Checkout request failed.");
+        }
         const result = await response.json();
+        if (typeof result.checkout_url !== "string") {
+          throw new Error("Checkout URL is missing.");
+        }
         const checkoutURL = new URL(result.checkout_url);
-        if (!response.ok || checkoutURL.protocol !== "https:" || checkoutURL.hostname !== "checkout.stripe.com") {
+        if (checkoutURL.protocol !== "https:" || checkoutURL.hostname !== "checkout.stripe.com") {
           throw new Error("Checkout is unavailable.");
         }
-        window.location.assign(checkoutURL);
+        window.location.assign(checkoutURL.href);
       } catch {
         checkoutStatus.textContent = "Checkout is temporarily unavailable. Please try again later.";
         buyButton.disabled = false;
